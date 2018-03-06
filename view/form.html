@@ -1,0 +1,57 @@
+ <section class="col-md-push-3 col-md-pull-3 col-md-6">
+                <h1 class="text-center">Sample Form</h1>
+                <form name="sampleForm" novalidate ng-submit="submitter()">
+                    <div class="form-group">
+                    <label for="fname">First Name</label>
+                    <input id="fname" name="fname" type="text" ng-model="user.firstName" class="form-control" ng-required="true"/> 
+                    <p class="alert alert-warning" ng-show="sampleForm.fname.$invalid && sampleForm.fname.$touched">First Name Required</p>
+                    </div>    
+                    <div class="form-group">
+                    <label for="lname">Last Name</label>
+                    <input id="lname" name="lname" type="text" ng-model="user.lastName" class="form-control" ng-required="true"/>
+                    <p class="alert alert-warning" ng-show="sampleForm.lname.$invalid && sampleForm.lname.$touched">Last Name Required</p>
+                    </div>    
+                    <div class="form-group">
+                    <label for="gender" >Gender</label>
+                    <div>
+                        <div class="radio-inline">
+                            <input id="gender" name="gender" ng-model="user.gender" value="Male" type="radio" />Male
+                        </div>
+                        <div class="radio-inline">
+                            <input id="gender" name="gender" ng-model="user.gender" value="Female" type="radio" />Female
+                        </div>    
+                    </div>    
+                    
+                    </div>    
+                    <div class="form-group">
+                    <label for="country">Country</label>
+                    <select id="country" name="country" ng-model="user.country" class="form-control" ng-required="true">
+                        <option ng-repeat="country in countries" value="{{country.code}}">{{country.name}}</option>
+                    </select> 
+                    <p class="alert alert-warning" ng-show="sampleForm.country.$invalid && sampleForm.country.$touched">Country Required</p> 
+                    </div>    
+                    <div class="form-group">
+                    <label for="address">Address</label>
+                    <textarea id="address" name="address" ng-model="user.address" ng-required="true" class="form-control"></textarea>
+                    <p ng-show="sampleForm.address.$invalid && sampleForm.address.$touched">Address Required</p>
+                    </div>    
+                    <div class="form-group">
+                    <label for="hobby">Hobbies</label>
+                    <div>
+                        <div class="checkbox-inline">
+                            <input id="hobby" name="hobby" type="checkbox" ng-model="user.hobby.sports"/>Sports
+                        </div>
+                        <div class="checkbox-inline">
+                            <input id="hobby" name="hobby" type="checkbox" ng-model="user.hobby.reading"/>Reading
+                        </div>
+                        <div class="checkbox-inline">    
+                            <input id="hobby" name="hobby" type="checkbox" ng-model="user.hobby.arts"/>Arts and Craft
+                        </div>
+                        <div class="checkbox-inline">    
+                            <input id="hobby" name="hobby" type="checkbox" ng-model="user.hobby.adventure"/>Adventure
+                        </div>    
+                    </div>
+                    </div>    
+                    <button type="submit" class="btn btn-primary" ng-disabled="sampleForm.$invalid">Submit</button>  
+                </form>
+</section>        

@@ -1,0 +1,28 @@
+textarea{
+    resize: none;
+    overflow: hidden;
+}
+
+.mypos{
+    position: absolute;
+    top: 40%;
+    left: 20%;
+    right: 20%;
+}
+
+.radiopos{
+    margin left:2%;
+}
+
+input.ng-invalid.ng-touched{
+    border: 1px solid red;
+}
+
+input.ng-valid{
+    border: 1px solid green;
+}
+
+select.ng-invalid.ng-touched,textarea.ng-invalid.ng-touched{
+    border: 1px solid red;
+}
+
