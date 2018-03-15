@@ -38,7 +38,7 @@ app.controller("formCtrl",['$scope','$log','$http','$location','formUserData',fu
     $scope.countries;11
     $http.get('js/data2.json').then(function(response){
         $scope.countries = response.data.records;
-    },function(error){ console.log(error);});
+    },function(error){ $log.log(error);});
     $scope.submitter = function(){
         if($scope.sampleForm.$valid){
              formUserData.setUserData($scope.user);
